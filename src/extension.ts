@@ -1,14 +1,9 @@
 import * as vscode from 'vscode';
+import cra from './commands/cra';
 
 export function activate(context: vscode.ExtensionContext) {
-
-	console.log('Congratulations, your extension "code-crafter" is now active!');
-
-	const disposable = vscode.commands.registerCommand('code-crafter.helloWorld', () => {
-		vscode.window.showInformationMessage('Hello World from Code Crafter!');
-	});
-
-	context.subscriptions.push(disposable);
+	const craCommand = cra();
+	context.subscriptions.push(craCommand);
 }
 
 export function deactivate() {}

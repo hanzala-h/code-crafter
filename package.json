@@ -14,8 +14,8 @@
   "contributes": {
     "commands": [
       {
-        "command": "code-crafter.helloWorld",
-        "title": "Hello World"
+        "command": "code-crafter.cra",
+        "title": "Create React App | Code Crafter"
       }
     ]
   },
