@@ -3,8 +3,12 @@
   "displayName": "Code Crafter",
   "description": "Effortlessly scaffold project templates for React, Vite, and more!",
   "version": "1.0.0",
-  "publisher": "Muhammad Hanzla",
+  "publisher": "MuhammadHanzla",
   "icon": "images/icon.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hanzala-h/code-crafter"
+  },
   "engines": {
     "vscode": "^1.93.0"
   },
