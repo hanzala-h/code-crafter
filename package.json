@@ -16,6 +16,10 @@
       {
         "command": "code-crafter.cra",
         "title": "Create React App | Code Crafter"
+      },
+      {
+        "command": "code-crafter.vite",
+        "title": "Create Vite | Code Crafter"
       }
     ]
   },

@@ -1,7 +1,10 @@
 import * as vscode from "vscode";
 import { exec } from "child_process";
 import { info, error, progress } from "../utils/messageUtils";
-import input from "../utils/inputUtils";
+import { getAppName, getProjectRoot } from "../utils/projectUtils";
+import { createOutputChannel, output } from "../utils/inputUtils";
+
+const outputChannel = createOutputChannel("React Application");
 
 async function createReactApp(appName: string, projectRoot: string) {
   await progress(
@@ -16,7 +19,9 @@ async function createReactApp(appName: string, projectRoot: string) {
               error(`Error creating React application: ${stderr}`);
               reject(err);
             } else {
-              info(`React application "${appName}" created successfully.`);
+              const msg = `React application "${appName}" created successfully.`;
+              info(msg);
+              output(outputChannel, "Success", msg, stdout);
               resolve();
             }
           }
@@ -34,12 +39,9 @@ export default function cra(): vscode.Disposable {
     "code-crafter.cra",
     async () => {
       try {
-        const appName =
-          (await input("Enter the name of your React project", "react-app")) ||
-          "react-app";
-        const projectRoot =
-          (await input("Enter the root of your React project", "cwd")) ||
-          process.cwd();
+        const appName = await getAppName("React", "react-app");
+
+        const projectRoot = await getProjectRoot("React");
 
         info("Started building your React application...");
 
