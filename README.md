@@ -1,71 +1,63 @@
-# code-crafter README
+# Code Crafter 🚀
 
-This is the README for your extension "code-crafter". After writing up a brief description, we recommend including the following sections.
+Effortlessly scaffold project templates for React, Vite, and more! 🌟
+
+## Overview
+
+**Code Crafter** is a Visual Studio Code extension designed to streamline your development workflow by providing easy-to-use commands for creating project templates. With Code Crafter, you can quickly scaffold out new projects using popular frameworks like React and Vite.
 
 ## Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+- **Create React App**: Scaffold a new React project with a single command. ⚛️
+- **Create Vite Project**: Set up a new Vite project quickly. ⚡️
+- **More Templates**: Easily extend the extension to support additional project templates in the future. 🌐
 
-For example if there is an image subfolder under your extension project workspace:
+## Commands
 
-\!\[feature X\]\(images/feature-x.png\)
+### Create React App
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+- **Command**: `code-crafter.cra`
+- **Description**: Scaffolds a new React project. 🎨
 
-## Requirements
+### Create Vite Project
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+- **Command**: `code-crafter.vite`
+- **Description**: Sets up a new Vite project. 🛠️
 
-## Extension Settings
+## Installation
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+1. Open VS Code. 🖥️
+2. Go to the Extensions view by clicking on the Extensions icon in the Activity Bar on the side of the window. 🔍
+3. Search for **Code Crafter**. 🔎
+4. Click **Install**. ✅
 
-For example:
+Alternatively, you can install it via the command line:
 
-This extension contributes the following settings:
+```sh
+code --install-extension muhammadhanzla.code-crafter
+```
 
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
+## Usage
 
-## Known Issues
+1. Open the Command Palette by pressing `Ctrl+Shift+P` (or `Cmd+Shift+P` on macOS). 🎛️
+2. Type and select the command you want to use, such as "Create React App" or "Create Vite Project." 📝
+3. Follow the prompts to set up your project. 🛠️
 
-Calling out known issues can help limit users opening duplicate issues against your extension.
+## Configuration
 
-## Release Notes
+There are no specific configurations required for this extension. Simply install it and use the commands provided. 🚀
 
-Users appreciate release notes as you update your extension.
+## Contributing
 
-### 1.0.0
+Feel free to open issues or submit pull requests if you have suggestions or improvements for the Code Crafter extension. 🌟
 
-Initial release of ...
+## License
 
-### 1.0.1
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details. 📜
 
-Fixed issue #.
+## Contact
 
-### 1.1.0
+If you have any questions or feedback, you can reach out to me:
 
-Added features X, Y, and Z.
-
----
-
-## Following extension guidelines
-
-Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
-
-* [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
-
-## Working with Markdown
-
-You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets.
-
-## For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+- **Publisher**: Muhammad Hanzla
+- **Email**: [sayhi.hanzla@gmail.com](mailto:sayhi.hanzla@gmail.com) 📧

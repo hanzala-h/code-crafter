@@ -2,7 +2,9 @@
   "name": "code-crafter",
   "displayName": "Code Crafter",
   "description": "Effortlessly scaffold project templates for React, Vite, and more!",
-  "version": "0.0.1",
+  "version": "1.0.0",
+  "publisher": "Muhammad Hanzla",
+  "icon": "images/icon.png",
   "engines": {
     "vscode": "^1.93.0"
   },
@@ -15,11 +17,11 @@
     "commands": [
       {
         "command": "code-crafter.cra",
-        "title": "Create React App | Code Crafter"
+        "title": "Create React App"
       },
       {
         "command": "code-crafter.vite",
-        "title": "Create Vite | Code Crafter"
+        "title": "Create Vite Project"
       }
     ]
   },
