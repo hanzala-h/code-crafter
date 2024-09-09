@@ -18,16 +18,18 @@ export function showWelcomeMessage(context: vscode.ExtensionContext) {
       if (selection === "Rate Extension") {
         vscode.env.openExternal(
           vscode.Uri.parse(
-            "https://marketplace.visualstudio.com/items?itemName=your-extension-id"
+            "https://marketplace.visualstudio.com/items?itemName=MuhammadHanzla.code-crafter"
           )
         );
       } else if (selection === "GitHub Repo") {
         vscode.env.openExternal(
-          vscode.Uri.parse("https://github.com/your-repo-url")
+          vscode.Uri.parse("https://github.com/hanzala-h/code-crafter")
         );
       } else if (selection === "Star on GitHub") {
         vscode.env.openExternal(
-          vscode.Uri.parse("https://github.com/your-repo-url/stargazers")
+          vscode.Uri.parse(
+            "https://github.com/hanzala-h/code-crafter/stargazers"
+          )
         );
       }
     });
