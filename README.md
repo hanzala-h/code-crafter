@@ -47,6 +47,22 @@ code --install-extension muhammadhanzla.code-crafter
 
 There are no specific configurations required for this extension. Simply install it and use the commands provided. 🚀
 
+## Changelog
+
+### v1.1.0
+
+- **New Features**:
+
+  - Added a welcome message with guidance on using the extension.
+
+- **Fixes**:
+  - Updated the handling of the default project root to improve functionality.
+  - Fixed a bug where the Vite project command would fail if the directory already existed.
+
+### v1.0.0
+
+- Initial release with support for creating React and Vite projects.
+
 ## Contributing
 
 Feel free to open issues or submit pull requests if you have suggestions or improvements for the Code Crafter extension. 🌟
