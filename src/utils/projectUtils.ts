@@ -1,3 +1,4 @@
+import * as vscode from "vscode";
 import { input } from "./inputUtils";
 
 /**
@@ -20,22 +21,23 @@ export async function getAppName(
 
 /**
  * Prompts the user to enter the root directory for their project.
- * If no input is provided, the `defaultRoot` (current working directory) is returned.
+ * If no input is provided, the current workspace folder is returned.
  *
  * @param {string} appTitle - The title of the application to be used in the prompt message.
- * @param {string} [defaultRoot=process.cwd()] - The default root directory, defaults to the current working directory.
- * @returns {Promise<string>} - The root directory provided by the user or the default root directory if no input is provided.
+ * @returns {Promise<string>} - The root directory provided by the user or the workspace directory if no input is provided.
  */
-export async function getProjectRoot(
-  appTitle: string,
-  defaultRoot: string = process.cwd()
-): Promise<string> {
+export async function getProjectRoot(appTitle: string): Promise<string> {
+  const defaultRoot = vscode.workspace.workspaceFolders
+    ? vscode.workspace.workspaceFolders[0].uri.fsPath
+    : process.cwd();
+
   return (
-    (await input(`Enter the root of your ${appTitle} project`, defaultRoot)) ||
-    defaultRoot
+    (await vscode.window.showInputBox({
+      prompt: `Enter the root of your ${appTitle} project`,
+      value: defaultRoot,
+    })) || defaultRoot
   );
 }
-
 /**
  * Prompts the user to enter the template name for a Vite project.
  * If no input is provided, the `defaultTemplate` is returned.
