@@ -1,5 +1,10 @@
 import * as vscode from "vscode";
 import { input } from "./inputUtils";
+import { exec } from "child_process";
+import { progress, info, error } from "./messageUtils";
+import { createOutputChannel, output } from "./outputUtils";
+import path from "path";
+import { directoryExists } from "./fileUtils";
 
 /**
  * Prompts the user to enter the name of their project.
@@ -87,4 +92,55 @@ export function getViteCommand(
   const variantSuffix = variant.trim();
 
   return `npm create vite@latest ${appName} -- --template ${templateName}${variantSuffix}`;
+}
+
+/**
+ * Creates a project by running a specified command and displays progress in a VSCode output channel.
+ *
+ * This function checks if the target directory already exists before proceeding with the project creation.
+ * If the directory exists, it throws an error to prevent overwriting the existing project.
+ * Otherwise, it executes the provided command to generate the project (e.g., React or Vite) and displays
+ * progress, success, or failure messages in a specified output channel.
+ *
+ * @param {string} appName - The name of the project to be created. This is used as the folder name where the project will be generated.
+ * @param {string} projectRoot - The root directory where the project will be created. The final path will be `projectRoot/appName`.
+ * @param {string} command - The command to be executed for creating the project (e.g., `npx create-react-app` or `npm init vite`).
+ * @param {string} channelName - The name of the VSCode output channel where progress and results will be shown.
+ *
+ * @throws {Error} Throws an error if the target directory already exists.
+ *
+ * @returns {Promise<void>} A promise that resolves once the project is successfully created, or rejects if an error occurs.
+ */
+export async function createProject(
+  appName: string,
+  projectRoot: string,
+  command: string,
+  channelName: string
+) {
+  const targetPath = path.join(projectRoot, appName);
+
+  if (directoryExists(targetPath)) {
+    error(`Directory "${appName}" already exists.`);
+    throw new Error(`Directory "${appName}" already exists.`);
+  }
+
+  const outputChannel = createOutputChannel(channelName);
+
+  await progress(
+    `Creating ${appName} application`,
+    () =>
+      new Promise<void>((resolve, reject) => {
+        exec(command, { cwd: projectRoot }, (err, stdout, stderr) => {
+          if (err) {
+            error(`Error creating application: ${stderr}`);
+            reject(err);
+          } else {
+            const msg = `${appName} application created successfully.`;
+            info(msg);
+            output(outputChannel, "Success", msg, stdout);
+            resolve();
+          }
+        });
+      })
+  );
 }
