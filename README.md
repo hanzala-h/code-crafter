@@ -51,6 +51,12 @@ There are no specific configurations required for this extension. Simply install
 
 ### v1.1.0
 
+### v1.1.1
+
+- **Fixes**:
+
+  - Updated placeholders in the welcome message and improved messaging clarity.
+
 - **New Features**:
 
   - Added a welcome message with guidance on using the extension.

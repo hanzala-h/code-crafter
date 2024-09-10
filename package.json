@@ -2,7 +2,7 @@
   "name": "code-crafter",
   "displayName": "Code Crafter",
   "description": "Effortlessly scaffold project templates for React, Vite, and more!",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "publisher": "MuhammadHanzla",
   "icon": "images/icon.png",
   "repository": {

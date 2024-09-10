@@ -9,7 +9,7 @@ import * as vscode from "vscode";
 export function showWelcomeMessage(context: vscode.ExtensionContext) {
   vscode.window
     .showInformationMessage(
-      "Thank you for installing [Your Extension Name]! 🎉 Please consider supporting us by rating, starring, or visiting our GitHub repository.",
+      "Thank you for installing Code Crafter! 🎉 Please consider supporting us by rating, starring, or visiting our GitHub repository.",
       "Rate Extension",
       "GitHub Repo",
       "Star on GitHub"
