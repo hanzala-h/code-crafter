@@ -49,6 +49,18 @@ There are no specific configurations required for this extension. Simply install
 
 ## Changelog
 
+### v1.1.3
+
+- **Fixes**:
+
+  - Updated Changelog in README.
+
+### v1.1.2
+
+- **Fixes**:
+
+  - Fixed package.json.
+
 ### v1.1.1
 
 - **Fixes**:
