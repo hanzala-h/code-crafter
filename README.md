@@ -49,13 +49,13 @@ There are no specific configurations required for this extension. Simply install
 
 ## Changelog
 
-### v1.1.0
-
 ### v1.1.1
 
 - **Fixes**:
 
   - Updated placeholders in the welcome message and improved messaging clarity.
+
+### v1.1.0
 
 - **New Features**:
 
